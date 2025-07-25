@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe - Shreyas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- THEME TOGGLE -->
+  <div id="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+  <!-- MAIN MENU -->
+  <div id="main-menu" class="menu">
+    <h1 class="title">Tic Tac Toe</h1>
+    <button onclick="chooseMode()">Start Game</button>
+    <button onclick="openDifficulty()">Choose Difficulty</button>
+    <button onclick="showAbout()">About</button>
+    <button onclick="exitGame()">Exit</button>
+  </div>
+
+  <!-- MODE SELECTION -->
+  <div id="mode-menu" class="menu hidden">
+    <h2>Select Mode</h2>
+    <button onclick="setMode('pvp')">Player vs Player</button>
+    <button onclick="setMode('ai')">Player vs AI</button>
+    <button onclick="backToMenu()">Back</button>
+  </div>
+
+  <!-- DIFFICULTY MENU -->
+  <div id="difficulty-menu" class="menu hidden">
+    <h2>Select Difficulty</h2>
+    <button onclick="setDifficulty('easy')">Easy</button>
+    <button onclick="setDifficulty('medium')">Medium</button>
+    <button onclick="setDifficulty('hard')">Hard</button>
+    <button onclick="backToMenu()">Back</button>
+  </div>
+
+  <!-- GAME UI -->
+  <div id="game-container" class="hidden">
+    <div class="top-bar">
+      <div id="scoreboard">
+        <span>Player: <span id="player-score">0</span></span>
+        <span>AI: <span id="ai-score">0</span></span>
+      </div>
+      <div id="controls">
+        <button onclick="toggleSound()">🔊</button>
+        <button onclick="goFullscreen()">⛶</button>
+        <button onclick="goToMenu()">Menu</button>
+      </div>
+    </div>
+
+    <div id="game-info">
+      <span id="turn-display">Your Turn (X)</span>
+    </div>
+
+    <div class="grid" id="game-grid">
+      <div class="cell" onclick="makeMove(0)"></div>
+      <div class="cell" onclick="makeMove(1)"></div>
+      <div class="cell" onclick="makeMove(2)"></div>
+      <div class="cell" onclick="makeMove(3)"></div>
+      <div class="cell" onclick="makeMove(4)"></div>
+      <div class="cell" onclick="makeMove(5)"></div>
+      <div class="cell" onclick="makeMove(6)"></div>
+      <div class="cell" onclick="makeMove(7)"></div>
+      <div class="cell" onclick="makeMove(8)"></div>
+    </div>
+
+    <div id="result" class="popup hidden">
+      <div class="popup-content">
+        <h2 id="result-text">You Win!</h2>
+        <button onclick="restartGame()">Play Again</button>
+        <button onclick="goToMenu()">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <div id="about" class="menu hidden">
+    <h2>About This Game</h2>
+    <p>Made with ❤️ by <strong>Shreyas</strong></p>
+    <p>This is an advanced Tic Tac Toe game featuring:</p>
+    <ul>
+      <li>3 AI Difficulty Levels</li>
+      <li>Player vs Player or AI</li>
+      <li>Beautiful UI and Theme Modes</li>
+      <li>Score Tracking and Interactions</li>
+    </ul>
+    <button onclick="backToMenu()">Back</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Created by Shreyas • 2025 ©</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+      </html>
